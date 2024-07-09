@@ -34,7 +34,7 @@
         background-color: antiquewhite;
       }
 
-      .Despesa_ {
+      .Situação_ {
         background-color: white;
         width: 30rem;
         padding: 0.5rem;
@@ -42,7 +42,7 @@
         border-radius: 1%;
       }
 
-      .Despesa-title {
+      .Situação-title {
         color: rgb(161, 161, 161);
         font-size: x-large;
         font-weight: bold;
@@ -50,30 +50,30 @@
         margin: 0;
       }
 
-      .Despesa-Header {
+      .Situação-Header {
         display: flex;
         justify-content: space-between;
         position: relative;
         border-bottom: rgb(161, 161, 161) solid 3px;
       }
 
-      .Despesa-cog {
+      .Situação-cog {
         margin-top: 1rem;
         width: 64px;
       }
 
-      .Despesa-grafico {
+      .Situação-grafico {
 
         /* margin-top: 1rem; */
       }
 
-      .Despesa-Direita {
+      .Situação-Direita {
         display: flex;
         position: relative;
         /* margin-top: 1rem; */
       }
 
-      .Despesa-importante {
+      .Situação-importante {
         color: red;
         font-size: 12px;
         margin-left: 0.5rem;
@@ -82,17 +82,19 @@
   </head>
 
   <body>
-    <div class="Despesa_ container">
-      <div class="Despesa-Header">
-        <p class="Despesa-title">Tranformação em Despesa</p>
+    <div class="Situação_ container">
+      <div class="Situação-Header">
+        <p class="Situação-title">Situação Cadastral Processos Ativos</p>
       </div>
-      <div class="Despesa-grafico">
+      <div class="Situação-grafico">
         <canvas id="myChart"></canvas>
       </div>
 
-      <p class="Despesa-importante">
-        Para ver as tranformações em despesas pendentes, clique na área do gráfico "Pendentes"
-
+      <p class="Situação-importante">
+        Os processos podem se enquadrar em mais de uma situação.
+        <br />
+        Para ver a situação cadastral dos processos ativos, clique na área do
+        gráfico
       </p>
     </div>
 
@@ -105,14 +107,13 @@
 
         data: {
           labels: [
-            "Pendente                                    ",
-            "Rejeitado                                                   ",
-            "Aprovada                                          "
+            "Sem compromissos em aberto ",
+            "Sem cadastro de andamento e compromissos a mais de X dias",
           ],
           datasets: [
             {
-              data: [58, 16.5 ,91.1],
-              backgroundColor: ["gray","orange" ,"rgb(37, 90, 238)"],
+              data: [580, 248],
+              backgroundColor: ["gray", "rgb(37, 90, 238)"],
             },
           ],
         },
