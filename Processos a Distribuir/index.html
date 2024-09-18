@@ -34,15 +34,15 @@
         background-color: antiquewhite;
       }
 
-      .Despesa_ {
+      .ProcessoDistribuir {
         background-color: white;
         width: 30rem;
         padding: 0.5rem;
-        border: 0.15rem solid rgb(184, 184, 184);
-        border-radius: 1%;
+        border: 1px solid #E5E5E5;
+        border-radius: 2px;
       }
 
-      .Despesa-title {
+      .ProcessoDistribuir-title {
         color: rgb(161, 161, 161);
         font-size: x-large;
         font-weight: bold;
@@ -50,30 +50,20 @@
         margin: 0;
       }
 
-      .Despesa-Header {
+      .ProcessoDistribuir-Header {
         display: flex;
         justify-content: space-between;
         position: relative;
         border-bottom: rgb(161, 161, 161) solid 3px;
       }
 
-      .Despesa-cog {
-        margin-top: 1rem;
-        width: 64px;
-      }
-
-      .Despesa-grafico {
-
-        /* margin-top: 1rem; */
-      }
-
-      .Despesa-Direita {
+      .ProcessoDistribuir-Direita {
         display: flex;
         position: relative;
         /* margin-top: 1rem; */
       }
 
-      .Despesa-importante {
+      .ProcessoDistribuir-importante {
         color: red;
         font-size: 12px;
         margin-left: 0.5rem;
@@ -82,16 +72,16 @@
   </head>
 
   <body>
-    <div class="Despesa_ container">
-      <div class="Despesa-Header">
-        <p class="Despesa-title">Processos a Distribuir</p>
+    <div class="ProcessoDistribuir container">
+      <div class="ProcessoDistribuir-Header">
+        <p class="ProcessoDistribuir-title">Processos a Distribuir</p>
       </div>
       <br>
-      <div class="Despesa-grafico">
+      <div class="ProcessoDistribuir-grafico">
         <canvas id="myChart"></canvas>
       </div>
 
-      <p class="Despesa-importante">
+      <p class="ProcessoDistribuir-importante">
         Para ver os processos a distribuir, clique na área do gráfico.
 
       </p>
@@ -99,6 +89,7 @@
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script>
+      var DataProcesso = [580, 248]
       const ctx = document.getElementById("myChart");
       Chart.register(ChartDataLabels);
       new Chart(ctx, {
@@ -111,8 +102,8 @@
           ],
           datasets: [
             {
-              data: [580, 248],
-              backgroundColor: ["gray","rgb(37, 90, 238)"],
+              data: DataProcesso,
+              backgroundColor: ["rgb(161, 161, 161)",'rgb(52, 154, 250)'],
             },
           ],
         },
